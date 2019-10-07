@@ -1,4 +1,4 @@
-#Reading data
+# Reading data
 
 testx<- read.table('test/X_test.txt')
 testy <- read.table('test/y_test.txt')
@@ -36,5 +36,5 @@ grp_cols <- names(meanstd_only)[c(1, 2)]
 dots <- lapply(grp_cols, as.symbol)
 tidy_data  <- meanstd_only %>% group_by(.dots=dots) %>% summarize_each(funs(mean))
 
-#Please upload your data set as a txt file created with write.table() using row.name=FALSE
+# Please upload your data set as a txt file created with write.table() using row.name=FALSE
 write.table(tidy_data ,file = " tidy_data.txt", row.names = FALSE)
